@@ -272,7 +272,13 @@
         }
       };
     }
-  \n\n  // Make the component available before Alpine starts.\n  window.netHackApp = createNetHackApp;\n  document.addEventListener('alpine:init', function () {\n    window.Alpine.data('netHackApp', createNetHackApp);\n  }, { once: true });\n</script>\n
+  // Make the component available before Alpine starts.
+  window.netHackApp = createNetHackApp;
+  document.addEventListener('alpine:init', function () {
+    Alpine.data('netHackApp', createNetHackApp);
+  }, { once: true });
+</script>
+
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
   <script src="https://unpkg.com/htmx.org@2.0.6"></script>
   <script src="https://unpkg.com/hyperscript.org@0.9.14"></script>
